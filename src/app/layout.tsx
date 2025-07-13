@@ -1,5 +1,6 @@
 import Sidebar from "@/components/ui/Sidebar";
 import Topbar from "@/components/ui/Topbar";
+import ThemeProvider from "@/context/ThemeProvider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -17,17 +18,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <div className="flex min-h-screen">
-          <Sidebar />
-          <div className="flex-1 flex flex-col">
-            <Topbar />
-            <main className="flex-1 p-6 overflow-auto bg-slate-50">
-              {children}
-            </main>
+        <ThemeProvider>
+          <div className="flex min-h-screen">
+            <Sidebar />
+            <div className="flex-1 flex flex-col">
+              <Topbar />
+              <main className="flex-1 p-6 overflow-auto">{children}</main>
+            </div>
           </div>
-        </div>
+        </ThemeProvider>
       </body>
     </html>
   );
