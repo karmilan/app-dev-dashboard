@@ -5,7 +5,8 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     <NextThemeProvider
       attribute="class"
       enableSystem={true}
-      defaultTheme="dark"
+      // defaultTheme="dark"
+      defaultTheme="system"
     >
       {children}
     </NextThemeProvider>

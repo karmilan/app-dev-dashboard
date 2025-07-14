@@ -6,7 +6,7 @@ import ThemeToggle from "./ui/ThemeToggle";
 
 const Topbar = () => {
   return (
-    <header className="flex justify-between p-4 border-b border-gray-300">
+    <header className="flex justify-between px-6 py-4 border-b border-gray-300 ">
       <SearchBar />
       <div className="flex items-center space-x-6">
         <LuBell className="w-4 h-4" />

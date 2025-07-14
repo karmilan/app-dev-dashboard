@@ -1,5 +1,11 @@
+import DashboardTopContent from "@/components/DashboardTopContent";
+
 const page = () => {
-  return <div>kkk</div>;
+  return (
+    <div>
+      <DashboardTopContent />
+    </div>
+  );
 };
 
 export default page;
