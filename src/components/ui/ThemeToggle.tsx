@@ -1,7 +1,8 @@
 // "use client";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { CiDark, CiLight } from "react-icons/ci";
+import { LuMoon, LuSun } from "react-icons/lu";
+import IconButton from "./IconButton";
 
 const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
@@ -16,13 +17,13 @@ const ThemeToggle = () => {
   return (
     <div>
       {theme === "dark" ? (
-        <button onClick={() => setTheme("light")} className="cursor-pointer">
-          <CiLight className="w-6 h-6" />
-        </button>
+        <IconButton onClick={() => setTheme("light")}>
+          <LuSun className="w-4 h-4" />
+        </IconButton>
       ) : (
-        <button onClick={() => setTheme("dark")} className="cursor-pointer">
-          <CiDark className="w-6 h-6" />
-        </button>
+        <IconButton onClick={() => setTheme("dark")}>
+          <LuMoon className="w-4 h-4" />
+        </IconButton>
       )}
     </div>
   );

@@ -14,7 +14,7 @@ const Sidebar = () => {
         <h1 className="font-semibold text-md">Dashboard</h1>
       </div>
 
-      <nav className="flex flex-col justify-center p-4 space-y-3 ">
+      <nav className="flex flex-col justify-center p-4 space-y-3">
         {menu.map((item) => (
           <Link href={item.href} key={item.name} className="flex items-center">
             <item.icon className="mr-6 h-4 w-4" />
