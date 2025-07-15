@@ -1,12 +1,19 @@
 import Link from "next/link";
-import { LuUser } from "react-icons/lu";
+import {
+  LuChartBar,
+  LuSettings,
+  LuTrendingUp,
+  LuUser,
+  LuUsers,
+} from "react-icons/lu";
 
 const Sidebar = () => {
   const menu = [
     { name: "Dashboard", href: "/dashboard", icon: LuUser },
-    { name: "Overview", href: "/settings", icon: LuUser },
-    { name: "Training", href: "/profile", icon: LuUser },
-    { name: "Phishing", href: "/profile", icon: LuUser },
+    { name: "Analytics", href: "/settings", icon: LuChartBar },
+    { name: "Users", href: "/profile", icon: LuUsers },
+    { name: "Performance", href: "/profile", icon: LuTrendingUp },
+    { name: "Settings", href: "/profile", icon: LuSettings },
   ];
   return (
     <div className="flex flex-col w-50 border-r border-gray-300">
