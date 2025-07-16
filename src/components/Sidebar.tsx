@@ -24,27 +24,54 @@ const Sidebar = ({
   ];
   console.log("menu open", menuOpen);
   return (
-    <div
-      className={` ${
-        menuOpen ? "flex" : "hidden"
-      } md:flex flex-col md:w-50 border-r border-gray-300`}
-    >
-      <div className="flex items-center justify-between p-5 ">
-        <h1 className="font-semibold text-md">Dashboard</h1>
-        <button onClick={toggleMenu} className="md:hidden">
-          <LuX />
-        </button>
+    <>
+      <div className="hidden md:flex flex-col md:w-50 border-r border-gray-300">
+        <div className="flex items-center justify-between p-5 ">
+          <h1 className="font-semibold text-md">Dashboard</h1>
+          <button onClick={toggleMenu} className="md:hidden">
+            <LuX />
+          </button>
+        </div>
+
+        <nav className="flex flex-col justify-center p-4 space-y-3">
+          {menu.map((item) => (
+            <Link
+              href={item.href}
+              key={item.name}
+              className="flex items-center"
+            >
+              <item.icon className="mr-6 h-4 w-4" />
+              <span>{item.name}</span>
+            </Link>
+          ))}
+        </nav>
       </div>
 
-      <nav className="flex flex-col justify-center p-4 space-y-3">
-        {menu.map((item) => (
-          <Link href={item.href} key={item.name} className="flex items-center">
-            <item.icon className="mr-6 h-4 w-4" />
-            <span>{item.name}</span>
-          </Link>
-        ))}
-      </nav>
-    </div>
+      {/* mobile sidebar  */}
+      {menuOpen && (
+        <div className="block md:hidden absolute md:relative bg-white dark:bg-zinc-900 border-r border-gray-300 h-screen">
+          <div className="flex items-center justify-between p-5 ">
+            <h1 className="font-semibold text-md">Dashboard</h1>
+            <button onClick={toggleMenu} className="md:hidden">
+              <LuX />
+            </button>
+          </div>
+
+          <nav className="flex flex-col justify-center p-4 space-y-3">
+            {menu.map((item) => (
+              <Link
+                href={item.href}
+                key={item.name}
+                className="flex items-center"
+              >
+                <item.icon className="mr-6 h-4 w-4" />
+                <span>{item.name}</span>
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
+    </>
   );
 };
 
