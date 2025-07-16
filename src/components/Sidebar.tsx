@@ -49,7 +49,7 @@ const Sidebar = ({
 
       {/* mobile sidebar  */}
       {menuOpen && (
-        <div className="block md:hidden absolute md:relative bg-white dark:bg-zinc-900 border-r border-gray-300 h-screen">
+        <div className="block md:hidden fixed md:relative bg-white dark:bg-zinc-900 border-r border-gray-300 h-screen">
           <div className="flex items-center justify-between p-5 ">
             <h1 className="font-semibold text-md">Dashboard</h1>
             <button onClick={toggleMenu} className="md:hidden">
